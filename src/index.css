@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  
+  --color-brand-green: #00D100;
+  --color-brand-gray: #555555;
+  --color-brand-dark: #0A0A0A;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-brand-dark bg-white antialiased selection:bg-brand-green/30;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-[-0.03em] leading-[1.1];
+  }
+
+  p {
+    @apply leading-relaxed tracking-[-0.01em];
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-green text-white font-bold transition-all duration-300 hover:bg-brand-green/90 hover:shadow-2xl hover:shadow-brand-green/20 hover:-translate-y-0.5 active:scale-95;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-4 rounded-full border border-brand-gray/20 text-brand-gray font-bold transition-all duration-300 hover:bg-brand-gray hover:text-white active:scale-95;
+}
